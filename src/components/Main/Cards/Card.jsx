@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import fetchData from '../../../utils/fetchAPI';
 import { NavLink } from 'react-router-dom';
+import niederlande from '../../../assets/mainImages/frankreich.webp'
 
 export default function Card({ country, imgId, text, detailsId }) {
-    const { VITE_CF_TOKEN, VITE_SPACE_ID } = import.meta.env;
-    const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/${imgId}?access_token=${VITE_CF_TOKEN}&w=100`;
+    // Deprecated Contentful Content
+    /* const { VITE_CF_TOKEN, VITE_SPACE_ID } = import.meta.env;
+    const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/${imgId}?access_token=${VITE_CF_TOKEN}&w=100`; */
+    
+    const url2 = `http://localhost:8080/cards/${imgId}`
     const [imgUrl, setImgUrl] = useState("")
 
     function handleData(data) {
-        setImgUrl(data.fields.file.url + "?fm=webp&h=400")
+        const fileName = data.path.split(".jpg")[0].split(".webp")[0]
+        console.log(data)
+        setImgUrl(`src/assets/mainImages/${fileName}.webp`)
+        /* setImgUrl(data.fields.file.url + "?fm=webp&h=400") */
     }
 
     useEffect(() => {
-        fetchData(url, handleData)
+        fetchData(url2, handleData)
     }, []);
 
     return (
