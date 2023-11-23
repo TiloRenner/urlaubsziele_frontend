@@ -27,7 +27,7 @@ export default function Cards() {
     }
 
     useEffect(() => {
-
+        fetchData(url2, handleData)
     }, []);
 
     function createCards () {
