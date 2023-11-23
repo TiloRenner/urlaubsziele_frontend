@@ -21,8 +21,13 @@ export default function Cards() {
         setCountryArray(data)
     }
 
+    function handleHello(data)
+    {
+        console.log("ResponseAPI:", data);
+    }
+
     useEffect(() => {
-        fetchData(url2, handleData)
+
     }, []);
 
     function createCards () {
