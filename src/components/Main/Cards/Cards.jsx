@@ -11,13 +11,20 @@ export default function Cards() {
     const {VITE_CF_TOKEN,VITE_SPACE_ID} = import.meta.env;
 
     const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/entries?access_token=${VITE_CF_TOKEN}&content_type=countryCard`
+    const urlAPI = `http://localhost:8080/test`
 
     function handleData(data) {
         setCountryArray(data.items)
     }
 
+    function handleHello(data)
+    {
+        console.log("ResponseAPI:", data);
+    }
+
     useEffect(() => {
         fetchData(url, handleData)
+        fetchData(urlAPI, handleHello)
     }, []);
 
     function createCards () {
