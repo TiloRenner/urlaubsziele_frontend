@@ -29,7 +29,7 @@ export default function DetailPage({ }) {
         if (data.id == "NotFound") {
             setErrorResponse(`${data.id}: ${data.message}`)
         }
-        setCountryData(data[0])
+        setCountryData(data)
         console.log("APIdata:",data)
     }
 
