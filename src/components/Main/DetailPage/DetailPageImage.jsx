@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import fetchData from "../../../utils/fetchAPI";
 
-export default function DetailPageImage({ assetID, classname, htmlID, alt, style, setImgBorderColor, setContainerBorderColor }) {
+export default function DetailPageImage({ fileName, classname, htmlID, alt, style, setImgBorderColor, setContainerBorderColor }) {
     const [imgURL, setImgURL] = useState();
 
     const { VITE_CF_TOKEN, VITE_SPACE_ID, VITE_SIGHTENGINE_USER, VITE_SIGHTENGINE_SECRET } = import.meta.env;
-    const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/${assetID}?access_token=${VITE_CF_TOKEN}`
+    //const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/${assetID}?access_token=${VITE_CF_TOKEN}`
 
     useEffect(() => {
-        fetchData(url, handleAssetData)
+        //fetchData(url, handleAssetData)
     }, []);
 
     function handleAssetData(assetData) {
-        setImgURL(assetData.fields.file.url)
+        //setImgURL(assetData.fields.file.url)
     }
 
     function handleColorData(data) {
@@ -36,7 +36,7 @@ useEffect(() => {
 
 return (
     <>
-        <img src={imgURL} className={classname} id={htmlID} alt={alt} style={style} />
+        <img src={fileName} className={classname} id={htmlID} alt={alt} style={style} />
     </>
 
 
