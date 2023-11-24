@@ -50,7 +50,7 @@ export default function DetailPage({ }) {
     const navurl = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/79MohGKY7i8ilc0OSAa288?access_token=${VITE_CF_TOKEN}`
 
 
-    const APIurl = `${VITE_SERVER_DOMAIN}/countries/${id}`
+    const APIurl = `${VITE_SERVER_DOMAIN}countries/${id}`
 
     const [imgBorderColor, setImgBorderColor] = useState("white")
     const [containerBorderColor, setContainerBorderColor] = useState("50,50,50")
