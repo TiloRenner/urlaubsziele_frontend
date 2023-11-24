@@ -2,8 +2,8 @@ import { MapContainer, TileLayer, Polygon} from "react-leaflet";
 import getCountry from "./getCountry";
 import { useEffect, useState } from "react";
 
-export default function MyMaps({ location, countryCode, color }) {
-  const position = [location.lat, location.lon];
+export default function MyMaps({ lat, lon, countryCode, color }) {
+  const position = [lat, lon];
 
   const [thisCountry, setThisCountry] = useState([ ])
   const purpleOptions = { color: `rgb(${color})` }
