@@ -42,12 +42,12 @@ export default function DetailPage({ }) {
 
     const navigate = useNavigate()
     const [countryData, setCountryData] = useState();
-    const [shareBtnURL, setShareBtnURL] = useState();
-    const [navBtnURL, setNavBtnURL] = useState();
+    //const [shareBtnURL, setShareBtnURL] = useState();
+    //const [navBtnURL, setNavBtnURL] = useState();
 
-    const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/entries/${id}?access_token=${VITE_CF_TOKEN}`
-    const shareurl = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/48CvpYGYtsrxDC9QQr2xi9?access_token=${VITE_CF_TOKEN}`
-    const navurl = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/79MohGKY7i8ilc0OSAa288?access_token=${VITE_CF_TOKEN}`
+    //const url = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/entries/${id}?access_token=${VITE_CF_TOKEN}`
+    //const shareurl = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/48CvpYGYtsrxDC9QQr2xi9?access_token=${VITE_CF_TOKEN}`
+    //const navurl = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/79MohGKY7i8ilc0OSAa288?access_token=${VITE_CF_TOKEN}`
 
 
     const APIurl = `${VITE_SERVER_DOMAIN}countries/${id}`
@@ -62,8 +62,8 @@ export default function DetailPage({ }) {
 
         fetchData(APIurl,handleDataAPI)
         //fetchData(url, handleData);
-        fetchData(shareurl, handleShareBtnURL);
-        fetchData(navurl, handleNavBtnURL);
+        //fetchData(shareurl, handleShareBtnURL);
+        //fetchData(navurl, handleNavBtnURL);
     }, []);
 
     const MainOutput = countryData ? createDetails(countryData) : <ErrorPage errorText={errorResponse}/>
