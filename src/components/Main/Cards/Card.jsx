@@ -10,7 +10,7 @@ export default function Card({ country, imgId, text, detailsId }) {
 
     function handleData(data) {
         const fileName = data.path.split(".jpg")[0].split(".webp")[0]
-        setImgUrl(`public/mainImages/${fileName}.webp`)
+        setImgUrl(`../mainImages/${fileName}.webp`)
     }
 
     useEffect(() => {
