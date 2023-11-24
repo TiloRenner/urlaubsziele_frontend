@@ -131,11 +131,11 @@ export default function DetailPage({ }) {
                                 <div className="row">
                                     <div className=" col">
                                         <a href="#page_top"  >
-                                            <img src={navBtnURL} className="topimg" alt="to-top-button" />
+                                            <img src="/to-top-b.svg" className="topimg" alt="to-top-button" />
                                         </a>
                                     </div>
                                     <div className="sharecountry col">
-                                        <img src={shareBtnURL} className="shareimg" alt="share-button" />
+                                        <img src="/share.svg" className="shareimg" alt="share-button" />
                                     </div>
                                 </div>
                             </div>

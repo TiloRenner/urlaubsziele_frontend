@@ -17,7 +17,7 @@ export default function Header() {
     useEffect(() => {
 
 
-        fetchData(url, handleLogoURL)
+       // fetchData(url, handleLogoURL)
     }, []);
 
     function handleLogoURL(data) {
@@ -35,7 +35,7 @@ export default function Header() {
             <nav id="page_top" className="navbar navbar-expand-lg sticky-top bg-body-tertiary">
                 <div className="container-fluid container mx-auto justify">
                     <NavLink className="nav-link active" to="/">
-                        <img src={logoURL} alt="Logo" width="100" />
+                        <img src="../logo.png" alt="Logo" width="100" />
                     </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleDisplay}>
                         <span className="navbar-toggler-icon"></span>
