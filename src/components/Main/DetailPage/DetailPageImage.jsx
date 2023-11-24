@@ -36,7 +36,7 @@ useEffect(() => {
 
 return (
     <>
-        <img src={`src/assets/mainImages/${fileName}.webp`} className={classname} id={htmlID} alt={alt} style={style} />
+        <img src={fileName} className={classname} id={htmlID} alt={alt} style={style} />
     </>
 
 

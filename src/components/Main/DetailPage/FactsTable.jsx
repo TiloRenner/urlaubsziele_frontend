@@ -24,7 +24,12 @@ export default function FactsTable({languages,residents,area}) {
     }
 
     //const languageElement = countryLanguages?.map(lang => lang +" ")
-    const languageElement = "tempString"
+    let languageElement ="";
+    languages.forEach(element => {
+        languageElement += element
+        languageElement +=" "
+    });
+    
 
     return (
         <table className="table table-striped table-responsive m-0">

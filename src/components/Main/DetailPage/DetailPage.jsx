@@ -116,14 +116,14 @@ export default function DetailPage({ }) {
                                             <div className="col-lg-1 col-xl-3 d-none d-lg-block">
                                             </div>
                                             <div className="col-lg-3 col-xl-3 col-2">
-                                                <DetailPageImage fileName={_data.flagpath} classname={"img-fluid shadow border border-secondary border-opacity-25 border-2"} htmlID={"selected_dest_flagpath"} alt={"Flagge des Landes"} />
+                                                <DetailPageImage fileName={`../src/assets/svg/${_data.flagpath}`} classname={"img-fluid shadow border border-secondary border-opacity-25 border-2"} htmlID={"selected_dest_flagpath"} alt={"Flagge des Landes"} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-6 text-center">
-                                <DetailPageImage fileName={_data.imagepath} classname={"img-fluid object-fit-cover rounded"} setImgBorderColor={setImgBorderColor} setContainerBorderColor={setContainerBorderColor} containerBorderColor={containerBorderColor} imgBorderColor={imgBorderColor} htmlID={"selected_dest_imagepath"} alt="country" style={{ height: "100%", border: `10px solid ${imgBorderColor}` }} />
+                                <DetailPageImage fileName={`../src/assets/mainImages/${_data.imagepath}.webp`} classname={"img-fluid object-fit-cover rounded"} setImgBorderColor={setImgBorderColor} setContainerBorderColor={setContainerBorderColor} containerBorderColor={containerBorderColor} imgBorderColor={imgBorderColor} htmlID={"selected_dest_imagepath"} alt="country" style={{ height: "100%", border: `10px solid ${imgBorderColor}` }} />
                             </div>
                         </div>
                         <div className="row">
