@@ -142,7 +142,7 @@ export default function DetailPage({ }) {
                             <div className="col-10">
                             </div>
                         </div>
-                        <div>{countryData.location && <LocationMap location={countryData.location} countryCode={countryData.countryCode} color={containerBorderColor} />}</div>
+                        <div>{countryData.locationlatitude && <LocationMap lat={countryData.locationlatitude} lon={countryData.locationlongitude} countryCode={countryData.countrycode} color={containerBorderColor} />}</div>
                     </div>
                 </div>
             </div>
