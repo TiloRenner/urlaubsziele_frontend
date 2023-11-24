@@ -15,7 +15,7 @@ export default function DetailPage({ }) {
     //api_id = "11kuRvuGnGSd85UbY0i5ao"
 
     const { id } = useParams();
-    const { VITE_CF_TOKEN, VITE_SPACE_ID } = import.meta.env;
+    const { VITE_CF_TOKEN, VITE_SPACE_ID,VITE_SERVER_DOMAIN } = import.meta.env;
     let [errorResponse, setErrorResponse] = useState("Data is loading...");
 
     function handleData(data) {
@@ -50,7 +50,7 @@ export default function DetailPage({ }) {
     const navurl = `https://cdn.contentful.com/spaces/${VITE_SPACE_ID}/assets/79MohGKY7i8ilc0OSAa288?access_token=${VITE_CF_TOKEN}`
 
 
-    const APIurl = `http://localhost:8080/countries/${id}`
+    const APIurl = `${VITE_SERVER_DOMAIN}/countries/${id}`
 
     const [imgBorderColor, setImgBorderColor] = useState("white")
     const [containerBorderColor, setContainerBorderColor] = useState("50,50,50")
@@ -111,19 +111,19 @@ export default function DetailPage({ }) {
                                         </div>
                                         <div className="row py-3 ">
                                             <div className="col-lg-8 col-xl-6 col-10">
-                                                <FactsTable languages={_data.countrycode} residents={_data.residents} area={_data.area} />
+                                                <FactsTable languages={_data.languages} residents={_data.residents} area={_data.area} />
                                             </div>
                                             <div className="col-lg-1 col-xl-3 d-none d-lg-block">
                                             </div>
                                             <div className="col-lg-3 col-xl-3 col-2">
-                                                <DetailPageImage assetID={_data.flagpath_id} classname={"img-fluid shadow border border-secondary border-opacity-25 border-2"} htmlID={"selected_dest_flagpath"} alt={"Flagge des Landes"} />
+                                                <DetailPageImage fileName={_data.flagpath} classname={"img-fluid shadow border border-secondary border-opacity-25 border-2"} htmlID={"selected_dest_flagpath"} alt={"Flagge des Landes"} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-6 text-center">
-                                <DetailPageImage assetID={_data.imagepath_id} classname={"img-fluid object-fit-cover rounded"} setImgBorderColor={setImgBorderColor} setContainerBorderColor={setContainerBorderColor} containerBorderColor={containerBorderColor} imgBorderColor={imgBorderColor} htmlID={"selected_dest_imagepath"} alt="country" style={{ height: "100%", border: `10px solid ${imgBorderColor}` }} />
+                                <DetailPageImage fileName={_data.imagepath} classname={"img-fluid object-fit-cover rounded"} setImgBorderColor={setImgBorderColor} setContainerBorderColor={setContainerBorderColor} containerBorderColor={containerBorderColor} imgBorderColor={imgBorderColor} htmlID={"selected_dest_imagepath"} alt="country" style={{ height: "100%", border: `10px solid ${imgBorderColor}` }} />
                             </div>
                         </div>
                         <div className="row">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import fetchData from '../../../utils/fetchAPI';
 
-export default function FactsTable({countryID,residents,area}) {
+export default function FactsTable({languages,residents,area}) {
 
     //TODO Fix too many languages on saving page
 
