@@ -16,6 +16,9 @@ export default function DetailPage({ }) {
 
     const { id } = useParams();
     const { VITE_CF_TOKEN, VITE_SPACE_ID,VITE_SERVER_DOMAIN } = import.meta.env;
+    const navigate = useNavigate()
+    const [countryData, setCountryData] = useState();
+
     let [errorResponse, setErrorResponse] = useState("Data is loading...");
 
     function handleData(data) {
@@ -33,6 +36,14 @@ export default function DetailPage({ }) {
         console.log("APIdata:",data)
     }
 
+    function handleVoteResult(data)
+    {
+        console.log("VotesNew:" ,data)
+        let temp = {...countryData};
+        temp.votes = data;
+        setCountryData(temp)
+    }
+
     function handleShareBtnURL(data) {
         setShareBtnURL(data.fields.file.url);
     }
@@ -40,8 +51,9 @@ export default function DetailPage({ }) {
         setNavBtnURL(data.fields.file.url);
     }
 
-    const navigate = useNavigate()
-    const [countryData, setCountryData] = useState();
+
+
+
     //const [shareBtnURL, setShareBtnURL] = useState();
     //const [navBtnURL, setNavBtnURL] = useState();
 
@@ -51,15 +63,19 @@ export default function DetailPage({ }) {
 
 
     const APIurl = `${VITE_SERVER_DOMAIN}countries/${id}`
+    const Voteurl = `${VITE_SERVER_DOMAIN}countries/vote/${id}`
+    function vote()
+    {
+        console.log("Start Vote")
+        fetchData(Voteurl,handleVoteResult)
+    }
+
 
     const [imgBorderColor, setImgBorderColor] = useState("white")
     const [containerBorderColor, setContainerBorderColor] = useState("50,50,50")
 
 
     useEffect(() => {
-
-        
-
         fetchData(APIurl,handleDataAPI)
         //fetchData(url, handleData);
         //fetchData(shareurl, handleShareBtnURL);
@@ -127,15 +143,21 @@ export default function DetailPage({ }) {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-2" style={{ height: "32px", width: "100px" }}>
+                            <div className="col-2" style={{ height: "30px", width: "350px" }}>
                                 <div className="row">
-                                    <div className=" col">
-                                        <a href="#page_top"  >
-                                            <img src="/to-top-b.svg" className="topimg" alt="to-top-button" />
+                                    <div className=" col" >
+                                        <a href="#page_top" >
+                                            <img src="/to-top-b.svg"  className="topimg" alt="to-top-button" />
                                         </a>
                                     </div>
-                                    <div className="sharecountry col">
+                                    <div className="sharecountry col" onClick={() => vote()}>
                                         <img src="/share.svg" className="shareimg" alt="share-button" />
+                                    </div>
+                                    <div className="col">
+                                        <p >{_data.votes} Votes </p>
+                                    </div>
+                                    <div className="col">
+                                        <p> </p>
                                     </div>
                                 </div>
                             </div>
