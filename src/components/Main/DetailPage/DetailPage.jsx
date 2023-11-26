@@ -1,5 +1,5 @@
 
-
+ // test comment
 import React, { useEffect, useState } from 'react'
 import FactsTable from './FactsTable'
 import fetchData from '../../../utils/fetchAPI'
@@ -13,6 +13,8 @@ import ErrorPage from '../Other/ErrorPage';
 export default function DetailPage({ }) {
 
     //api_id = "11kuRvuGnGSd85UbY0i5ao"
+
+    let testvar = 1;
 
     const { id } = useParams();
     const { VITE_CF_TOKEN, VITE_SPACE_ID,VITE_SERVER_DOMAIN } = import.meta.env;
